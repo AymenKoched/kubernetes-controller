@@ -1,0 +1,50 @@
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  name: manager-role
+rules:
+- apiGroups:
+  - notifications.aymenkoched
+  resources:
+  - slackmessages
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - notifications.aymenkoched
+  resources:
+  - slackmessages/finalizers
+  verbs:
+  - update
+- apiGroups:
+  - notifications.aymenkoched
+  resources:
+  - slackmessages/status
+  verbs:
+  - get
+  - patch
+  - update
+
+- apiGroups:
+    - apps
+  resources:
+    - deployments
+  verbs:
+    - get
+    - list
+    - watch
+
+- apiGroups: [""]
+  resources:
+    - namespaces
+  verbs:
+    - get
+    - list
+    - watch
+    - create

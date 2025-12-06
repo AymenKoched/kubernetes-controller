@@ -1,0 +1,9 @@
+apiVersion: notifications.aymenkoched/v1alpha1
+kind: SlackMessage
+metadata:
+  labels:
+    app.kubernetes.io/name: kubernetes-controller-interview
+    app.kubernetes.io/managed-by: kustomize
+  name: slackmessage-sample
+spec:
+  text: "Hello, World!"
